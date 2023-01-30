@@ -19,8 +19,9 @@
 
 >### 使用緣由
 ```
-git最初的開發動力來自於 BitKeeper 和 Monotone。git最初只是作為一個可以被其他前端（比如Cogito或Stgit）包裝的後端而開發的，
-但後來git核心已經成熟到可以獨立地用作版本控制。很多被廣泛使用的軟體專案都使用 git 進行版本控制，其中包括 Linux 核心、X.Org伺服器和OLPC核心等專案的開發流程。
+git最初的開發動力來自於 BitKeeper 和 Monotone。git最初只是作為一個可以被其他前端（比如Cogito或Stgit）
+包裝的後端而開發的，但後來git核心已經成熟到可以獨立地用作版本控制。很多被廣泛使用的軟體專案都使用 git 進行
+版本控制，其中包括 Linux 核心、X.Org伺服器和OLPC核心等專案的開發流程。
 ```
 
 >### 版本控制
@@ -34,7 +35,9 @@ git最初的開發動力來自於 BitKeeper 和 Monotone。git最初只是作為
 ---
 ![](https://i.imgur.com/IFwIhoh.png)
 ```
-Git 可以分為 Local 和 Remote 兩個環境，由於 Git 屬於分散式的版本控制系統，所以開發者可以在離線 local 環境下開發，等到有網路時再將自己的程式推到 Remote環境或 pull 下其他開發者程式碼進行整合。在 Local 中我們又分為 working directory、staging area和 repositories
+Git 可以分為 Local 和 Remote 兩個環境，由於 Git 屬於分散式的版本控制系統，所以開發者可以在離線 local 環境下開發，等到
+有網路時再將自己的程式推到 Remote環境或 pull 下其他開發者程式碼進行整合。在 Local 中我們又分為 working directory、
+staging area和 repositories。
 ```
 -->簡單來說，就是在要上傳的資料夾內產生git檔，接下來將檔案add到暫存區，再commit到本地端的repositories，最後push到指定的遠端repositories內。
 
@@ -48,7 +51,6 @@ Git 常用指令集介紹
 | 指令 | 作用 |
 | -------- | -------- | 
 | ```git config --list```   | 查看設定    | 
-| 
 
 >### init / clone
 
