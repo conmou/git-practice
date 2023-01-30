@@ -14,20 +14,20 @@
 ---
 >### 歷史
 ```
-最初由 Linus Torvalds 創作，於2005年以GPL授權條款釋出，目的是為了更好地管理Linux核心開發
-而設計。
+最初由 Linus Torvalds 創作，於2005年以GPL授權條款釋出，目的是為了更好地管理Linux核心開發而設計。
 ```
 
 >### 使用緣由
 ```
-git最初的開發動力來自於 BitKeeper 和 Monotone。git最初只是作為一個可以被其他前端（比如Cogito
-或Stgit）包裝的後端而開發的，但後來git核心已經成熟到可以獨立地用作版本控制。很多被廣泛使用的軟體專
-案都使用 git 進行版本控制，其中包括 Linux 核心、X.Org伺服器和OLPC核心等專案的開發流程。
+git最初的開發動力來自於 BitKeeper 和 Monotone。git最初只是作為一個可以被其他前端（比如Cogito或Stgit）包裝的後端而開發的，
+但後來git核心已經成熟到可以獨立地用作版本控制。很多被廣泛使用的軟體專案都使用 git 進行版本控制，其中包括 Linux 核心、X.Org伺服器和OLPC核心等專案的開發流程。
 ```
 
 >### 版本控制
 ```
-是一種軟體工程的開發技巧，可以透過這個系統讓每位成員的軟體版本可以方便同步和維護管理（不然要用 email 或是其他工具傳送和管理十分麻煩，尤其程式又常常會有不同版本修改的問題！）。在沒有版本控制系統時，我們常會在編輯檔案前複製一個備份，或是在更新檔案後產生許多重複檔案，非常不便且難以維護。
+是一種軟體工程的開發技巧，可以透過這個系統讓每位成員的軟體版本可以方便同步和維護管理（不然要用 email 或是其他工具傳送和管理
+十分麻煩，尤其程式又常常會有不同版本修改的問題）。在沒有版本控制系統時，我們常會在編輯檔案前複製一個備份，或是在更新檔案後產生
+許多重複檔案，非常不便且難以維護。
 ```
 
 版本控制的邏輯說明
@@ -47,63 +47,60 @@ Git 常用指令集介紹
 
 | 指令 | 作用 |
 | -------- | -------- | 
-| ==git config --list==   | 查看設定    | 
-| -------- | -------- | 
-| Text     | Text     | 
-| -------- | -------- |
-| Text     | Text     |
+| ```git config --list```   | 查看設定    | 
+| 
 
 >### init / clone
 
 | 指令 | 作用 |
 | -------- | -------- | 
-| ==git clone==   | 抓遠端儲存庫下來	    | 
-| ==git init== | Git 初始化 | 
-| ==rm -rf .git==     | 移除 Git     | 
+| ```git clone```   | 抓遠端儲存庫下來	    | 
+| ```git init``` | Git 初始化 | 
+| ```rm -rf .git```     | 移除 Git     | 
 
 >### remote
 
 | 指令 | 作用 |
 | -------- | -------- | 
-| ==git remote add (origin) <your url>== | 遠端連結	| 
-| ==git remote set-url (origin) <your url>== | 修改遠端連結 | 
-| ==git remote remove (origin)==     | 移除遠端連結     | 
+| ```git remote add (origin) <your url>``` | 遠端連結	| 
+| ```git remote set-url (origin) <your url>``` | 修改遠端連結 | 
+| ```git remote remove (origin)```     | 移除遠端連結     | 
 
 >### 基本版本控制語法
 
 | 指令 | 作用 |
 | -------- | -------- | 
-| ==git status== | 觀看狀態	| 
-| ==git add (file)== | 新增指定檔案至暫存區 | 
-| ==git add .==     | 新增所有檔案至暫存區     | 
-| ==git commit -m 'message'== | 將檔案提交至本地數據庫	| 
-| ==git pull== | 將遠端檔案合併到本地數據庫 | 
-| ==git push -u (remote) (branch)==  | 將檔案推至遠端數據庫  | 
+| ```git status``` | 觀看狀態	| 
+| ```git add (file)``` | 新增指定檔案至暫存區 | 
+| ```git add .```     | 新增所有檔案至暫存區     | 
+| ```git commit -m 'message'``` | 將檔案提交至本地數據庫	| 
+| ```git pull``` | 將遠端檔案合併到本地數據庫 | 
+| ```git push -u (remote) (branch)```  | 將檔案推至遠端數據庫  | 
     
 .gitignore 配置
 ---
-於資料夾內新增一個新檔案，輸入==touch .gitignore== 新增.gitignore檔，輸入==git status==查看檔案是否都存在，於此檔內新增想要被忽略的檔案，輸入==git status==查看檔案是否被git忽略。
+於資料夾內新增一個新檔案，輸入```touch .gitignore``` 新增.gitignore檔，輸入```git status```查看檔案是否都存在，於此檔內新增想要被忽略的檔案，輸入```git status```查看檔案是否被git忽略。
 ![](https://i.imgur.com/SuxjmYz.jpg)
 
     
 分支的使用方法
 ---
-==git branch <branch name>== 新增分支
+```git branch <branch name>``` 新增分支
     
-==git push origin <branch name>== 將分支推至遠端
+```git push origin <branch name>``` 將分支推至遠端
 ![](https://i.imgur.com/bqyn7RJ.png)
 
-==git merge --no-ff <branch name>== 合併分支（--no-ff是合併後保留分支）
+```git merge --no-ff <branch name>``` 合併分支（--no-ff是合併後保留分支）
     
 Commit 介紹及使用
 ---
 功能就是將暫存區的內容提交到儲存庫（Repository）保留
     
-==git commit== --> 將暫存區的檔案提交到儲存庫儲存
+```git commit``` --> 將暫存區的檔案提交到儲存庫儲存
     
-==git commit -m "msg"== ＃ 說明這次的 commit 做啥事
+```git commit -m "msg"``` ＃ 說明這次的 commit 做啥事
     
-使用 ==git status== 追蹤狀態且提示訊息
+使用 ```git status``` 追蹤狀態且提示訊息
     
 ![](https://i.imgur.com/t4cfHWJ.png)
 
